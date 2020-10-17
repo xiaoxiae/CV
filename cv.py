@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import os
 import re
 from dataclasses import dataclass
@@ -42,11 +41,6 @@ parser.add_argument(
 arguments = parser.parse_args()
 
 
-def get_string_hashsum(string: str):
-    """Generate a SHA-256 hashsum of the given string."""
-    return hashlib.sha256(string.encode()).hexdigest()
-
-
 def html(c: str):
     """Convert a string from Markdown to HTML."""
     markdown(c)
@@ -63,6 +57,11 @@ def latex(c: str):
             .strip()
         )
     return r" \newline ".join(result)
+
+
+def html(c: str):
+    """Convert a string from Markdown to HTML."""
+    return markdown(c)
 
 
 @dataclass
@@ -106,16 +105,8 @@ class Node:
             return 1
         return sum([child.leaf_count() for child in self.children])
 
-    def hashsum(self):
-        """Return a hashsum of the contents of the node and its children."""
-        return get_string_hashsum(
-            (self.content or "")
-            + "{"
-            + "-".join([child.hashsum() for child in (self.children or [])])
-            + "}"
-        )
-
     def to_latex(self, depth=0):
+        """Convert the node and all of its children to LaTeX."""
         LATEX_PRE = r"""
         \documentclass[10pt]{article}
         \usepackage{array, xcolor, lipsum, bibentry,titlesec,hyperref}
@@ -201,63 +192,70 @@ class Node:
                 for child in self.children:
                     result += child.to_latex(depth + 1)
                 return result + r" \end{tabular} \filbreak " + "\n"
-            else:
-                return result + "\n\smallskip\n" + latex(self.children[0].content)
 
-        elif depth == 2:
+            return result + "\n\smallskip\n" + latex(self.children[0].content)
+
+        if depth == 2:
             result = r"\textit{" + latex(self.content) + "}"
 
             for child in self.children:
                 result += " & " + child.to_latex(depth + 1) + r"\\"
 
-        return result + "\n"
+            return result + "\n"
 
-    def to_html(self, depth=0, max_depth=3, tr=True):
-        """Get the node string associated with the node."""
+    def to_html(self, depth=0):
+        """Convert the node and all of its children to HTML."""
+
+        HTML_PRE = ""
+        HTML_POST = ""
+
+        # when called from root
+        if depth == 0:
+            return (
+                HTML_PRE
+                + "\n".join([child.to_html(depth + 1) for child in self.children])
+                + HTML_POST
+            ).replace("--", "–")
 
         if self.children is None:
-            return f"""
-            {'<tr>' if tr else ''}
-            <td class="cv-content-cell" colspan="{max_depth - depth}">
-                {html(self.content)}
-            </td>
-            {'</tr>' if tr else ''}
-            """
-        elif depth == 0:
-            return f"""
+            return html(self.content)
+
+        if depth == 1:
+            result = f"<h3>{self.content}</h3>"
+
+            if self.children[0].children is not None:
+                result += "<table class='cv'>" + "\n" + "<tbody>" + "\n"
+
+                for child in self.children:
+                    result += child.to_html(depth + 1)
+
+                return result + "</tbody>" + "\n" + "</table>" + "\n"
+
+            return result + "\n" + html(self.children[0].content)
+
+        if depth == 2:
+            result = f"""
             <tr>
-                <td rowspan="{self.leaf_count()}" class="cv-primary-group">
-                    <p><span>{self.content}</span></p>
-                </td>
-                {self.children[0].to_html(depth + 1, tr=False)}
+                <td valign="top" align="right"><em>{html(self.content)}</em></td>
+                <td>{self.children[0].to_html(depth + 1)}</td>
             </tr>
-            {"".join([child.to_html(depth + 1) for child in self.children[1:]])}
             """
-        elif depth == 1:
-            return f"""
-            {'<tr>' if tr else ''}
-            <td class="cv-secondary-group">
-              <p><span>{self.content}</span></p>
-            </td>
-            {"".join([child.to_html(depth + 1, tr=False) for child in self.children])}
-            {'</tr>' if tr else ''}
-            """
+
+            for child in self.children[1:]:
+                result += f"""
+                    <tr>
+                        <td></td>
+                        <td>{child.to_html(depth + 1)}</td>
+                    </tr>
+                    """
+
+            return result + "\n"
 
 
 base = os.path.dirname(os.path.realpath(__file__))
 cache_path = os.path.join(base, f".cv")  # for TeX output and cache stuff
-hashsum_path = os.path.join(cache_path, "hashsum")
 
 root = Node.from_file(os.path.join(base, "cv.yaml"))
-
-if os.path.exists(hashsum_path) and not arguments.ignore_cache:
-    with open(hashsum_path, "r") as f:
-        contents = f.read().strip()
-
-    if contents == root.hashsum():
-        print("No changes.")
-        quit()
-
 
 # generate a latex file when creating a PDF
 if arguments.latex:
@@ -285,4 +283,6 @@ elif arguments.pdf:
     print("PDF CV generated!")
 
 elif arguments.html:
-    print("TODO!")
+    with open(arguments.out + ".html", "w") as f:
+        f.write(root.to_html())
+    print("HTML CV generated!")
