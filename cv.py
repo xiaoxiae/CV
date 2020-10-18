@@ -206,8 +206,8 @@ class Node:
     def to_html(self, depth=0):
         """Convert the node and all of its children to HTML."""
 
-        HTML_PRE = ""
-        HTML_POST = ""
+        HTML_PRE = "<div class='cv'"
+        HTML_POST = "</div>"
 
         # when called from root
         if depth == 0:
@@ -224,7 +224,7 @@ class Node:
             result = f"<h3>{self.content}</h3>"
 
             if self.children[0].children is not None:
-                result += "<table class='cv'>" + "\n" + "<tbody>" + "\n"
+                result += "<table>" + "\n" + "<tbody>" + "\n"
 
                 for child in self.children:
                     result += child.to_html(depth + 1)
