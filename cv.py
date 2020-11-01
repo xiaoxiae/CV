@@ -15,7 +15,8 @@ from markdown import markdown
 parser = argparse.ArgumentParser(description="Generate a CV from a YAML file..")
 
 parser.add_argument(
-    "out",
+    "-o",
+    "--out",
     help="The path to the file, without extension. Defaults to 'cv'.",
     default="cv",
 )
@@ -32,10 +33,6 @@ group.add_argument(
 
 group.add_argument(
     "--html", help="Make the output an HTML.", action="store_true",
-)
-
-parser.add_argument(
-    "-i", "--ignore-cache", help="Ignore the cache file.", action="store_true",
 )
 
 arguments = parser.parse_args()
@@ -253,7 +250,7 @@ class Node:
 
 
 base = os.path.dirname(os.path.realpath(__file__))
-cache_path = os.path.join(base, f".cv")  # for TeX output and cache stuff
+cache_path = os.path.join(base, f".cv")  # for TeX output
 
 root = Node.from_file(os.path.join(base, "cv.yaml"))
 
@@ -264,7 +261,6 @@ if arguments.latex:
     print("LaTeX CV generated!")
 
 elif arguments.pdf:
-    # cache
     if not os.path.exists(cache_path):
         os.mkdir(cache_path)
 
