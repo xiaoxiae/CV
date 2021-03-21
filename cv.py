@@ -203,7 +203,7 @@ class Node:
     def to_html(self, depth=0):
         """Convert the node and all of its children to HTML."""
 
-        HTML_PRE = "<div class='cv'"
+        HTML_PRE = "<div class='cv'>"
         HTML_POST = "</div>"
 
         # when called from root
