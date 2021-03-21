@@ -33,6 +33,8 @@
 -
   - Applications
   -
+    - "**Florodoro** (2021, Python – PyQt5) [[GitHub](https://github.com/xiaoxiae/Florodoro)]<br>
+      A pomodoro timer that grows procedurally generated trees and flowers while you're studying."
     - "**Grafátko** (2019–2020, Python – PyQt5) [[GitHub](https://github.com/xiaoxiae/Grafatko)]<br>
       An app for creating and visualizing graphs and
       graph-related algorithms."
@@ -41,11 +43,6 @@
     - "**Robotics Simplified** (2018–19) [[website](https://xiaoxiae.github.io/Robotics-Simplified-Website/)] [[GitHub](https://github.com/xiaoxiae/Robotics-Simplified-Website)] [[whitepaper](https://github.com/xiaoxiae/soc-paper-2019)]<br>
       A website for learning about robotics in a simple
       and intuitive way."
-    - "**FRC Robot Codebase** (2017–18, Java) [[GitHub](https://github.com/MetalMooseFRC/MetalMoose2018)]<br>
-      I was the lead programmer and driver for the FRC
-      team 1391, implementing the robot code for that
-      year. We managed to reach the world championships
-      in Detroit, placing around 40th in the world."
 - Other
 -
   - Languages
