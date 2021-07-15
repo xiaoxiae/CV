@@ -66,13 +66,19 @@ class Node:
     content: str
     children: Optional[List[Node]] = None
 
+
+    @classmethod
+    def from_string(cls, string: str):
+        return Node(None, cls.__from_list(string))
+
+
     @classmethod
     def from_file(cls, path: str):
-
         with open(path, "r") as f:
             result = yaml.safe_load(f.read())
 
-        return Node(None, cls.__from_list(result))
+        return Node(None, cls.__from_list(string))
+
 
     @classmethod
     def __from_list(cls, l: list):
@@ -102,7 +108,7 @@ class Node:
             return 1
         return sum([child.leaf_count() for child in self.children])
 
-    def to_latex(self, depth=0):
+    def to_latex(self, information, depth=0):
         """Convert the node and all of its children to LaTeX."""
         LATEX_PRE = r"""
         \documentclass[10pt]{article}
@@ -142,9 +148,9 @@ class Node:
                 \vspace*{0.2cm}
 
                 {\large
-                \textbf{Email:} \href{mailto:tomas@slama.dev}{tomas@slama.dev} \hfill
-                \textbf{Website:} \href{https://slama.dev}{slama.dev}\hfill
-                \textbf{GitHub:} \href{https://github.com/xiaoxiae}{github.com/xiaoxiae}
+                \textbf{Email:} \href{mailto:""" + information['email'] + r"""}{""" + information['email'] + r"""} \hfill
+                \textbf{Website:} \href{https://""" + information['website'] + r"""}{""" + information['website'] + r"""}\hfill
+                \textbf{GitHub:} \href{https://""" + information['github'] + r"""}{""" + information['github'] + r"""}
                 }
 
                 \vspace*{0.1cm}
@@ -170,7 +176,7 @@ class Node:
         if depth == 0:
             return (
                 LATEX_PRE
-                + "\n".join([child.to_latex(depth + 1) for child in self.children])
+                + "\n".join([child.to_latex(information, depth + 1) for child in self.children])
                 + LATEX_POST
             )
 
@@ -187,7 +193,7 @@ class Node:
             if self.children[0].children is not None:
                 result += r"\begin{tabular}{L!{\VRule}R}" + "\n"
                 for child in self.children:
-                    result += child.to_latex(depth + 1)
+                    result += child.to_latex(information, depth + 1)
                 return result + r" \end{tabular} \filbreak " + "\n"
 
             return result + "\n\smallskip\n" + latex(self.children[0].content)
@@ -196,7 +202,7 @@ class Node:
             result = r"\textit{" + latex(self.content) + "}"
 
             for child in self.children:
-                result += " & " + child.to_latex(depth + 1) + r"\\"
+                result += " & " + child.to_latex(information, depth + 1) + r"\\"
 
             return result + "\n"
 
@@ -252,12 +258,16 @@ class Node:
 base = os.path.dirname(os.path.realpath(__file__))
 cache_path = os.path.join(base, f".cv")  # for TeX output
 
-root = Node.from_file(os.path.join(base, "cv.yaml"))
+with open(os.path.join(base, "cv.yaml"), "r") as f:
+    result = yaml.safe_load(f.read())
+
+information = result[0]
+root = Node.from_string(result[1:])
 
 # generate a latex file when creating a PDF
 if arguments.latex:
     with open(arguments.out + ".tex", "w") as f:
-        f.write(root.to_latex())
+        f.write(root.to_latex(information))
     print("LaTeX CV generated!")
 
 elif arguments.pdf:
@@ -268,7 +278,7 @@ elif arguments.pdf:
     latex_file_name = os.path.basename(arguments.out) + ".tex"
     latex_output_path = os.path.join(cache_path, latex_file_name)
     with open(latex_output_path, "w") as f:
-        f.write(root.to_latex())
+        f.write(root.to_latex(information))
 
     cwd = os.getcwd()
     os.chdir(cache_path)

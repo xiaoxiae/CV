@@ -1,3 +1,7 @@
+- email: "tomas@slama.dev"
+  website: "slama.dev"
+  github: "github.com/xiaoxiae"
+
 - Job Experience
 -
   - 2019–present
@@ -8,10 +12,11 @@
       at the Charles University."
   - 2019–present
   -
-    - "**High-school programming course lecturer**<br>
-      I used the VEX Edr robot kit and Python to introduce
-      basic concepts of robotics design, CADing, algorithms
-      and data structures."
+    - "**High-school programming courses lecturer**<br>
+      I use the VEX Edr robot kit and Python to introduce
+      basic concepts of robotics and programming. I also wrote a
+      [short textbook](https://github.com/xiaoxiae/uvod-do-programovani-vex-v5)
+      about Vex EDR."
 - Education
 -
   - 2019–present
@@ -23,7 +28,7 @@
   -
     - "**Westtown School** [[website](https://www.westtown.edu/index.cfm)], USA (scholarship)<br>
       received an ASSIST scholarship (as one of the 4 people
-      from the Czech Republic for the year 2017) to study at a
+      from the Czech Republic in 2017) to study at a
       private US highschool for one year. My focus was mainly
       on robotics and programming."
   - 2015–2019
@@ -34,15 +39,14 @@
   - Applications
   -
     - "**Florodoro** (2021, Python – PyQt5) [[GitHub](https://github.com/xiaoxiae/Florodoro)]<br>
-      A pomodoro timer that grows procedurally generated trees and flowers while you're studying."
+      A pomodoro timer that grows randomized plants while you're studying."
     - "**Grafátko** (2019–2020, Python – PyQt5) [[GitHub](https://github.com/xiaoxiae/Grafatko)]<br>
       An app for creating and visualizing graphs and
       graph-related algorithms."
   - Robotics
   -
-    - "**Robotics Simplified** (2018–19) [[website](https://xiaoxiae.github.io/Robotics-Simplified-Website/)] [[GitHub](https://github.com/xiaoxiae/Robotics-Simplified-Website)] [[whitepaper](https://github.com/xiaoxiae/soc-paper-2019)]<br>
-      A website for learning about robotics in a simple
-      and intuitive way."
+    - "**Robotics Simplified** (2018–19, Jekyll + Python) [[website](https://xiaoxiae.github.io/Robotics-Simplified-Website/)] [[GitHub](https://github.com/xiaoxiae/Robotics-Simplified-Website)] [[paper](https://github.com/xiaoxiae/soc-paper-2019)]<br>
+      A website for learning about robotics in a simple and intuitive way."
 - Other
 -
   - Languages
@@ -50,7 +54,7 @@
     - "**Czech** (native), **English** (bilingual) and **Spanish** (elementary)"
   - Skills
   -
-    - "I have a Czech **first aid certificate**"
+    - "I have a Czech **first aid certificate**."
   - Interests
   -
     - "-- making YouTube videos ([see my channel](https://www.youtube.com/channel/UC_IaBSHmisYbiYlv32EeNkQ)) about computer science<br>
