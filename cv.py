@@ -35,6 +35,10 @@ group.add_argument(
     "--html", help="Make the output an HTML.", action="store_true",
 )
 
+parser.add_argument(
+    "-c", "--cache", help="Only generate if the destination doesn't exist, or if the cached YAML doesn't match the current one.", action="store_true",
+)
+
 arguments = parser.parse_args()
 
 
@@ -250,20 +254,46 @@ class Node:
 
 
 base = os.path.dirname(os.path.realpath(__file__))
-cache_path = os.path.join(base, f".cv")  # for TeX output
+cache_path = os.path.join(base, f".cv")
+yaml_path = os.path.join(base, "cv.yaml")
+yaml_cache_path = os.path.join(cache_path, os.path.basename(yaml_path))
 
-root = Node.from_file(os.path.join(base, "cv.yaml"))
+root = Node.from_file(yaml_path)
 
-# generate a latex file when creating a PDF
+if arguments.cache:
+    # if the destination exists
+    if (arguments.latex and os.path.exists(arguments.out + ".tex")) \
+        or (arguments.html and os.path.exists(arguments.out + ".html")) \
+        or (arguments.pdf and os.path.exists(arguments.out + ".pdf")):
+
+        # if the cache exists and matches the current yaml
+        if os.path.exists(yaml_cache_path):
+            with open(yaml_path) as f:
+                a = f.read()
+
+            with open(yaml_cache_path) as f:
+                b = f.read()
+
+            if a == b:
+                print("output file exists and the cache hasn't changed, quitting.")
+                quit()
+
+if not os.path.exists(cache_path):
+    os.mkdir(cache_path)
+
+# save the cached YAML
+with open(yaml_path) as f:
+    contents = f.read()
+with open(yaml_cache_path, "w") as f:
+    f.write(contents)
+
+# generate a latex file even when creating a PDF
 if arguments.latex:
     with open(arguments.out + ".tex", "w") as f:
         f.write(root.to_latex())
     print("LaTeX CV generated!")
 
 elif arguments.pdf:
-    if not os.path.exists(cache_path):
-        os.mkdir(cache_path)
-
     # output tex
     latex_file_name = os.path.basename(arguments.out) + ".tex"
     latex_output_path = os.path.join(cache_path, latex_file_name)
