@@ -1,4 +1,5 @@
-- email: "tomas@slama.dev"
+- name: "Tomáš Sláma"
+  email: "tomas@slama.dev"
   website: "slama.dev"
   github: "github.com/xiaoxiae"
 
@@ -12,17 +13,18 @@
       at the Charles University."
   - 2019–present
   -
-    - "**High-school programming course lecturer**<br>
-      I used the VEX Edr robot kit and Python to teach
-      basic concepts of robotics, CADing, algorithms
-      and data structures, [writing a textbook](https://github.com/xiaoxiae/uvod-do-programovani-vex-v5) about
-      VEX V5 programming in the process."
+    - "**High-school programming courses lecturer**<br>
+      I use the VEX Edr robot kit and Python to introduce
+      basic concepts of robotics and programming. I also wrote a
+      [short textbook](https://github.com/xiaoxiae/uvod-do-programovani-vex-v5)
+      about Vex EDR."
 - Education
 -
   - 2019–present
   -
     - "**Charles University** [[website](https://www.mff.cuni.cz/en)], CZ<br>
-      I am getting my bachelor's degree in Computer Science at the Charles University."
+      I am getting my bachelor's degree in Computer Science
+      at the Charles University."
   - 2017–2018
   -
     - "**Westtown School** [[website](https://www.westtown.edu/index.cfm)], USA (scholarship)<br>
@@ -51,10 +53,12 @@
   - Languages
   -
     - "**Czech** (native), **English** (bilingual) and **Spanish** (elementary)"
+  - Skills
+  -
+    - "I have a Czech **first aid certificate**."
   - Interests
   -
-    - "-- [KSP](http://ksp.mff.cuni.cz/) and [ProTab](http://www.protab.cz/) event organizer and lecturer<br>
-      -- YouTube channel about computer science ([see my videos](https://www.youtube.com/channel/UC_IaBSHmisYbiYlv32EeNkQ))<br>
+    - "-- making YouTube videos ([see my channel](https://www.youtube.com/channel/UC_IaBSHmisYbiYlv32EeNkQ)) about computer science<br>
       -- rock climbing ([see me climb](https://slama.dev/climbing/)), snowboarding, slacklining<br>
       -- photography ([see my photos](https://slama.dev/photography/))<br>
       -- indie computer games, chess"
