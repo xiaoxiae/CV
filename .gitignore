@@ -1,4 +1,4 @@
-.cv/
+.cv_cache/
 *.pdf
 *.html
 *.tex
