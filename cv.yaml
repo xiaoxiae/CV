@@ -8,30 +8,29 @@
   - 2019–present
   -
     - "**System administrator** at [[KAM](https://kam.mff.cuni.cz/)]<br>
-      My work includes network and server management, handling
-      software and hardware issues and other IT-related things
-      at the Charles University."
-  - 2019–present
+      My work includes network and server management, the handling of
+      software/hardware issues and other IT-related things
+      at the department of Applied Mathematics at the Charles University."
+  - 2019–2021
   -
-    - "**High-school programming courses lecturer**<br>
-      I use the VEX Edr robot kit and Python to introduce
-      basic concepts of robotics and programming. I also wrote a
-      [short textbook](https://github.com/xiaoxiae/uvod-do-programovani-vex-v5)
-      about Vex EDR."
+    - "**Vex EDR programming lecturer**<br>
+      As a part of a government grant, I wrote a
+      [[textbook](https://github.com/xiaoxiae/uvod-do-programovani-vex-v5)]
+      about Vex EDR programming, which I used to teach basic concepts of
+      programming and robotics to children of ages 12-18."
 - Education
 -
   - 2019–present
   -
     - "**Charles University** [[website](https://www.mff.cuni.cz/en)], CZ<br>
-      I am getting my bachelor's degree in Computer Science
-      at the Charles University."
+      I am getting my bachelor's degree in Computer Science at the Charles University,
+      with the Theoretical computer science specialization."
   - 2017–2018
   -
     - "**Westtown School** [[website](https://www.westtown.edu/index.cfm)], USA (scholarship)<br>
       received an ASSIST scholarship (as one of the 4 people
-      from the Czech Republic in 2017) to study at a
-      private US highschool for one year. My focus was mainly
-      on robotics and programming."
+      from the Czech Republic in 2017) to study at the
+      US highschool Westtown for one year."
   - 2015–2019
   -
     - "**Turnov Grammar School** [[website](http://www.gytu.cz/postnuke/index.php)], CZ"
@@ -39,15 +38,17 @@
 -
   - Applications
   -
-    - "**Florodoro** (2021, Python – PyQt5) [[GitHub](https://github.com/xiaoxiae/Florodoro)]<br>
+    - "**Clis** and **Cled** (2021–present, Python, C#) [[GitHub](https://github.com/Climber-Apps)] [[whitepaper](https://github.com/Climber-Apps/Thesis)]<br>
+      Apps for automatic climbing hold scanning and virtual climbing wall editing."
+    - "**Grafátko** (2019–2020, Python) [[GitHub](https://github.com/xiaoxiae/Grafatko)]<br>
+      An app for creating and visualizing graphs and graph-related algorithms."
+    - "**Florodoro** (2021, Python) [[GitHub](https://github.com/xiaoxiae/Florodoro)]<br>
       A pomodoro timer that grows randomized plants while you're studying."
-    - "**Grafátko** (2019–2020, Python – PyQt5) [[GitHub](https://github.com/xiaoxiae/Grafatko)]<br>
-      An app for creating and visualizing graphs and
-      graph-related algorithms."
   - Robotics
   -
-    - "**Robotics Simplified** (2018–19, Jekyll + Python) [[website](https://xiaoxiae.github.io/Robotics-Simplified-Website/)] [[GitHub](https://github.com/xiaoxiae/Robotics-Simplified-Website)] [[paper](https://github.com/xiaoxiae/soc-paper-2019)]<br>
-      A website for learning about robotics in a simple and intuitive way."
+    - "**Robotics Simplified** (2018–19, Python) [[website](https://xiaoxiae.github.io/Robotics-Simplified-Website/)] [[GitHub](https://github.com/xiaoxiae/Robotics-Simplified-Website)] [[whitepaper](https://github.com/xiaoxiae/soc-paper-2019)]<br>
+      A website for learning about robotics in a simple and intuitive way, created as a part of the
+      [SPA](https://www.soc.cz/english/) competition for the year 2018."
 - Other
 -
   - Languages
@@ -55,7 +56,7 @@
     - "**Czech** (native), **English** (bilingual) and **Spanish** (elementary)"
   - Interests
   -
-    - "-- making YouTube videos ([see my channel](https://www.youtube.com/channel/UC_IaBSHmisYbiYlv32EeNkQ)) about computer science<br>
+    - "-- creating **YouTube videos** about Computer Science ([see my videos](https://www.youtube.com/channel/UC_IaBSHmisYbiYlv32EeNkQ))<br>
       -- rock climbing ([see me climb](https://slama.dev/climbing/)), snowboarding, slacklining<br>
       -- photography ([see my photos](https://slama.dev/photography/))<br>
-      -- indie computer games, chess"
+      -- computer games, chess"
