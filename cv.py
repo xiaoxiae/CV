@@ -5,12 +5,14 @@ from __future__ import annotations
 import argparse
 import os
 import re
+import shutil
 from dataclasses import dataclass
 from subprocess import DEVNULL, PIPE, Popen
-from typing import *
 
 import yaml
 from markdown import markdown
+
+YAML_NAME = "cv.yaml"
 
 parser = argparse.ArgumentParser(description="Generate a CV from a YAML file..")
 
@@ -19,6 +21,13 @@ parser.add_argument(
     "--out",
     help="The path to the file, without extension. Defaults to 'cv'.",
     default="cv",
+)
+
+parser.add_argument(
+    "-c",
+    "--cached",
+    help="Copy the PDF directly from the cache folder if the contents didn't change. Only works when the --pdf flag is used.",
+    action='store_true',
 )
 
 group = parser.add_mutually_exclusive_group(required=True)
@@ -70,15 +79,6 @@ class Node:
     @classmethod
     def from_string(cls, string: str):
         return Node(None, cls.__from_list(string))
-
-
-    @classmethod
-    def from_file(cls, path: str):
-        with open(path, "r") as f:
-            result = yaml.safe_load(f.read())
-
-        return Node(None, cls.__from_list(string))
-
 
     @classmethod
     def __from_list(cls, l: list):
@@ -256,10 +256,13 @@ class Node:
 
 
 base = os.path.dirname(os.path.realpath(__file__))
-cache_path = os.path.join(base, f".cv")  # for TeX output
+cache_path = os.path.join(base, ".cv_cache")  # for TeX output
 
-with open(os.path.join(base, "cv.yaml"), "r") as f:
-    result = yaml.safe_load(f.read())
+yaml_path = os.path.join(base, YAML_NAME)
+
+with open(yaml_path, "r") as f:
+    yaml_contents = f.read()
+    result = yaml.safe_load(yaml_contents)
 
 information = result[0]
 root = Node.from_string(result[1:])
@@ -274,19 +277,35 @@ elif arguments.pdf:
     if not os.path.exists(cache_path):
         os.mkdir(cache_path)
 
+    # if we want to use the cached
+    cached_yaml_path = os.path.join(cache_path, YAML_NAME)
+
+    if os.path.exists(cached_yaml_path):
+        with open(cached_yaml_path) as f:
+            cached_yaml_contents = f.read()
+    else:
+        cached_yaml_contents = None
+
     # output tex
-    latex_file_name = os.path.basename(arguments.out) + ".tex"
+    latex_file_name = "cv.tex"
     latex_output_path = os.path.join(cache_path, latex_file_name)
-    with open(latex_output_path, "w") as f:
-        f.write(root.to_latex(information))
 
-    cwd = os.getcwd()
-    os.chdir(cache_path)
-    Popen(["lualatex", latex_file_name], stdout=DEVNULL).communicate()
-    os.chdir(cwd)
+    if not arguments.cached or yaml_contents != cached_yaml_contents:
+        with open(latex_output_path, "w") as f:
+            f.write(root.to_latex(information))
 
-    os.rename(latex_output_path[:-3] + "pdf", arguments.out + ".pdf")
-    print("PDF CV generated!")
+        cwd = os.getcwd()
+        os.chdir(cache_path)
+        Popen(["lualatex", latex_file_name], stdout=DEVNULL).communicate()
+        os.chdir(cwd)
+
+        # copy the yaml file so it can be cached
+        shutil.copyfile(yaml_path, cached_yaml_path)
+        print("PDF CV generated!")
+    else:
+        print("PDF CV cached!")
+
+    shutil.copyfile(latex_output_path[:-3] + "pdf", arguments.out + ".pdf")
 
 elif arguments.html:
     with open(arguments.out + ".html", "w") as f:
