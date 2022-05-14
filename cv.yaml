@@ -38,12 +38,12 @@
 -
   - Applications
   -
-    - "**Clis** and **Cled** (2021–present, Python, C#) [[GitHub](https://github.com/Climber-Apps)] [[whitepaper](https://github.com/Climber-Apps/Thesis)]<br>
+    - "**Clis** and **Cled** (2021–present, Python + C#) [[website](https://climber.tools/)] [[GitHub](https://github.com/Climber-Apps)] [[thesis](https://github.com/Climber-Apps/Thesis)]<br>
       Apps for automatic climbing hold scanning and virtual climbing wall editing."
-    - "**Grafátko** (2019–2020, Python) [[GitHub](https://github.com/xiaoxiae/Grafatko)]<br>
-      An app for creating and visualizing graphs and graph-related algorithms."
     - "**Florodoro** (2021, Python) [[GitHub](https://github.com/xiaoxiae/Florodoro)]<br>
       A pomodoro timer that grows randomized plants while you're studying."
+    - "**Grafátko** (2019–2020, Python) [[GitHub](https://github.com/xiaoxiae/Grafatko)]<br>
+      An app for creating and visualizing graphs and graph-related algorithms."
   - Robotics
   -
     - "**Robotics Simplified** (2018–19, Python) [[website](https://xiaoxiae.github.io/Robotics-Simplified-Website/)] [[GitHub](https://github.com/xiaoxiae/Robotics-Simplified-Website)] [[whitepaper](https://github.com/xiaoxiae/soc-paper-2019)]<br>
@@ -57,6 +57,6 @@
   - Interests
   -
     - "-- creating **YouTube videos** about Computer Science ([see my videos](https://www.youtube.com/channel/UC_IaBSHmisYbiYlv32EeNkQ))<br>
-      -- rock climbing ([see me climb](https://slama.dev/climbing/)), snowboarding, slacklining<br>
       -- photography ([see my photos](https://slama.dev/photography/))<br>
+      -- rock climbing ([see me climb](https://slama.dev/climbing/)), snowboarding, slacklining<br>
       -- computer games, chess"
