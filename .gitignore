@@ -1,4 +1,6 @@
 .cv_cache/
+.cv/
+.mypy_cache/
 *.pdf
 *.html
 *.tex
