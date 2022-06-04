@@ -14,32 +14,33 @@
   - 2019–2021
   -
     - "**Vex EDR programming lecturer**<br>
-      As a part of a government grant, I wrote a
-      [[textbook](https://github.com/xiaoxiae/uvod-do-programovani-vex-v5)]
-      about Vex EDR programming, which I used to teach basic concepts of
-      programming and robotics to children of ages 12-18."
+      As a part of a government grant, I wrote a textbook
+      [[PDF](https://github.com/xiaoxiae/uvod-do-programovani-vex-v5)]
+      about Vex EDR programming, which I then used to teach basic concepts of
+      programming and robotics to children of ages 12--18."
 - Education
 -
   - 2019–present
   -
-    - "**Charles University** [[website](https://www.mff.cuni.cz/en)], CZ<br>
+    - "**Charles University** [[website](https://www.mff.cuni.cz/en)], Czech Republic<br>
       I am getting my bachelor's degree in Computer Science at the Charles University,
-      with the Theoretical computer science specialization."
+      with a specialization in Theoretical computer science."
   - 2017–2018
   -
     - "**Westtown School** [[website](https://www.westtown.edu/index.cfm)], USA (scholarship)<br>
-      received an ASSIST scholarship (as one of the 4 people
-      from the Czech Republic in 2017) to study at the
-      US highschool Westtown for one year."
+      I received an ASSIST scholarship (as one of the 4 people
+      from the Czech Republic in 2017) to study at the Westtown private boarding school for one academic year."
   - 2015–2019
   -
-    - "**Turnov Grammar School** [[website](http://www.gytu.cz/postnuke/index.php)], CZ"
+    - "**Turnov Grammar School** [[website](http://www.gytu.cz/postnuke/index.php)], Czech Republic"
 - Programming
 -
+  - Projects
+  -
+    - "**Clis** and **Cled** (2021–present, Python + C#) [[website](https://climber.tools/)] [[GitHub](https://github.com/Climber-Apps)] [[bachelor thesis](https://github.com/Climber-Apps/Thesis)]<br>
+      Tools for automatic climbing hold scanning and virtual route editing."
   - Applications
   -
-    - "**Clis** and **Cled** (2021–present, Python + C#) [[website](https://climber.tools/)] [[GitHub](https://github.com/Climber-Apps)] [[thesis](https://github.com/Climber-Apps/Thesis)]<br>
-      Apps for automatic climbing hold scanning and virtual climbing wall editing."
     - "**Florodoro** (2021, Python) [[GitHub](https://github.com/xiaoxiae/Florodoro)]<br>
       A pomodoro timer that grows randomized plants while you're studying."
     - "**Grafátko** (2019–2020, Python) [[GitHub](https://github.com/xiaoxiae/Grafatko)]<br>
