@@ -7,38 +7,40 @@
 -
   - 2019–present
   -
-    - "**System administrator** at [[KAM](https://kam.mff.cuni.cz/)]<br>
+    - "**System administrator** at the _Charles University_<br>
       My work includes network and server management, the handling of
       software/hardware issues and other IT-related things
-      at the department of Applied Mathematics at the Charles University."
+      at the department of Applied Mathematics of the Charles University."
   - 2019–2021
   -
-    - "**Vex EDR programming lecturer**<br>
+    - "**Vex EDR programming lecturer** at the _Turnov Educational Center_<br>
       As a part of a government grant, I wrote a textbook
       [[PDF](https://github.com/xiaoxiae/uvod-do-programovani-vex-v5)]
-      about Vex EDR programming, which I then used to teach basic concepts of
+      about Vex EDR programming, which I then used to introduce concepts of
       programming and robotics to children of ages 12--18."
 - Education
 -
   - 2019–present
   -
-    - "**Charles University** [[website](https://www.mff.cuni.cz/en)], Czech Republic<br>
-      I am getting my bachelor's degree in Computer Science at the Charles University,
+    - "**Charles University** [[website](https://www.mff.cuni.cz/en)], _Czech Republic_<br>
+      I am getting my bachelor's degree in Computer Science at the Charles University in Prague,
       with a specialization in Theoretical computer science."
   - 2017–2018
   -
-    - "**Westtown School** [[website](https://www.westtown.edu/index.cfm)], USA (scholarship)<br>
+    - "**Westtown School** [[website](https://www.westtown.edu/index.cfm)], _USA_<br>
       I received an ASSIST scholarship (as one of the 4 people
       from the Czech Republic in 2017) to study at the Westtown private boarding school for one academic year."
   - 2015–2019
   -
-    - "**Turnov Grammar School** [[website](http://www.gytu.cz/postnuke/index.php)], Czech Republic"
+    - "**Turnov Grammar School** [[website](http://www.gytu.cz/postnuke/index.php)], _Czech Republic_"
 - Programming
 -
   - Projects
   -
     - "**Clis** and **Cled** (2021–present, Python + C#) [[website](https://climber.tools/)] [[GitHub](https://github.com/Climber-Apps)] [[bachelor thesis](https://github.com/Climber-Apps/Thesis)]<br>
-      Tools for automatic climbing hold scanning and virtual route editing."
+      Tools for automatic climbing hold scanning and virtual route editing.
+      This includes an Arduino-powered turntable which automatically takes pictures and converts them to 3D models,
+      along with a cross-platform editor to place them on the wall."
   - Applications
   -
     - "**Florodoro** (2021, Python) [[GitHub](https://github.com/xiaoxiae/Florodoro)]<br>
@@ -48,8 +50,10 @@
   - Robotics
   -
     - "**Robotics Simplified** (2018–19, Python) [[website](https://xiaoxiae.github.io/Robotics-Simplified-Website/)] [[GitHub](https://github.com/xiaoxiae/Robotics-Simplified-Website)] [[whitepaper](https://github.com/xiaoxiae/soc-paper-2019)]<br>
-      A website for learning about robotics in a simple and intuitive way, created as a part of the
-      [SPA](https://www.soc.cz/english/) competition for the year 2018."
+      A website for learning about robotics in a simple and intuitive way."
+    - "**FRC Robot Codebase** (2017–18, Java) [[website](https://www.metalmoose1391.org/2018)] [[GitHub](https://github.com/MetalMooseFRC/MetalMoose2018)] [[whitepaper](https://raw.githubusercontent.com/MetalMooseFRC/MetalMoose2018/master/Documents/Software%20Overview.pdf)]<br>
+      I was the lead programmer and driver for the FRC team 1391, implementing the robot code for that
+      year. We reached the world championships in Detroit and received the Innovation in Control Award for our robot's autonomous code."
 - Other
 -
   - Languages
@@ -59,5 +63,4 @@
   -
     - "-- creating **YouTube videos** about Computer Science ([see my videos](https://www.youtube.com/channel/UC_IaBSHmisYbiYlv32EeNkQ))<br>
       -- photography ([see my photos](https://slama.dev/photography/))<br>
-      -- rock climbing ([see me climb](https://slama.dev/climbing/)), snowboarding, slacklining<br>
-      -- computer games, chess"
+      -- rock climbing ([see me climb](https://slama.dev/climbing/)), snowboarding, slacklining"
