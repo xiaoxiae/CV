@@ -113,7 +113,7 @@ class Node:
         LATEX_PRE = r"""
         \documentclass[10pt]{article}
         \usepackage{array, xcolor, lipsum, bibentry,titlesec,hyperref}
-        \usepackage[margin=3cm]{geometry}
+        \usepackage[margin={2.5cm,2cm}]{geometry}
 
         \titleformat{\section}{\scshape\fontsize{17pt}{19.6}\selectfont}{\thesection}{0em}{}
 
@@ -137,6 +137,9 @@ class Node:
           \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
         \begin{document}
+
+\topskip0pt
+\vspace*{\fill} 
 
         \begin{center}
                 {\scshape\Huge """ + information['name'] + r"""}
@@ -169,6 +172,9 @@ class Node:
         """
 
         LATEX_POST = r"""
+        % 1/2 ratio for top and bottom space (it optically looks better)
+        \vspace*{\fill}
+        \vspace*{\fill}
         \end{document}
         """
 
