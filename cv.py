@@ -127,8 +127,8 @@ class Node:
         }
 
         \definecolor{lightgray}{gray}{0.8}
-        \newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
-        \newcolumntype{R}{p{0.786\textwidth}}
+        \newcolumntype{L}{>{\raggedleft}p{0.13\textwidth}}
+        \newcolumntype{R}{p{0.8\textwidth}}
         \newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
 
         \pagenumbering{gobble}
@@ -150,16 +150,14 @@ class Node:
 
                 \vspace*{0.2cm}
 
-                {\large
-                \textbf{Email:} \href{mailto:""" + information['email'] + r"""}{""" + information['email'] + r"""} \hfill
+                {\large\textbf{Email:} \href{mailto:""" + information['email'] + r"""}{""" + information['email'] + r"""} \hfill
                 \textbf{Website:} \href{https://""" + information['website'] + r"""}{""" + information['website'] + r"""}\hfill
-                \textbf{GitHub:} \href{https://""" + information['github'] + r"""}{""" + information['github'] + r"""}
-                }
+                \textbf{GitHub:} \href{https://""" + information['github'] + r"""}{""" + information['github'] + r"""}}
 
                 \vspace*{0.1cm}
         \end{center}
 
-        \renewcommand{\arraystretch}{1.5}
+        \renewcommand{\arraystretch}{1.4}
 
         \hypersetup{
              colorlinks = true,
