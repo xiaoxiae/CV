@@ -3,21 +3,6 @@
   website: "slama.dev"
   github: "github.com/xiaoxiae"
 
-- Job Experience
--
-  - 2019–present
-  -
-    - "**System administrator** at the _Charles University_<br>
-      My work includes network and server management, the handling of
-      software/hardware issues and other IT-related things
-      at the department of Applied Mathematics of the Charles University."
-  - 2019–2021
-  -
-    - "**Vex EDR programming lecturer** at the _Turnov Educational Center_<br>
-      As a part of a government grant, I wrote a textbook
-      [[PDF](https://github.com/xiaoxiae/uvod-do-programovani-vex-v5)]
-      about Vex EDR programming, which I then used to introduce concepts of
-      programming and robotics to children of ages 12--18."
 - Education
 -
   - 2019–present
@@ -33,11 +18,26 @@
   - 2015–2019
   -
     - "**Turnov Grammar School** [[website](http://www.gytu.cz/postnuke/index.php)], _Czech Republic_"
-- Programming
+- Experience
 -
-  - Projects
+  - 2019–present
   -
-    - "**Clis** and **Cled** (2021–present, Python + C#) [[website](https://climber.tools/)] [[GitHub](https://github.com/Climber-Apps)] [[bachelor thesis](https://github.com/Climber-Apps/Thesis)]<br>
+    - "**System administrator** at the _Charles University_<br>
+      My work includes network and server management, the handling of
+      software/hardware issues and other IT-related things
+      at the department of Applied Mathematics of the Charles University."
+  - 2019–2021
+  -
+    - "**Vex EDR programming lecturer** at the _Turnov Educational Center_<br>
+      As a part of a government grant, I wrote a textbook
+      [[PDF](https://github.com/xiaoxiae/uvod-do-programovani-vex-v5)]
+      about Vex EDR programming, which I then used to introduce concepts of
+      programming and robotics to children of ages 12--18."
+- Projects
+-
+  - Thesis
+  -
+    - "**Clis** and **Cled** (2021–present, Python + C#) [[website](https://climber.tools/)] [[GitHub](https://github.com/Climber-Apps)] [[whitepaper](https://github.com/Climber-Apps/Thesis)]<br>
       Tools for automatic climbing hold scanning and virtual route editing.
       This includes an Arduino-powered turntable which automatically takes pictures and converts them to 3D models,
       along with a cross-platform editor to place them on the wall."
