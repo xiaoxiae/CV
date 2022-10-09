@@ -157,7 +157,7 @@ class Node:
                 \vspace*{0.1cm}
         \end{center}
 
-        \renewcommand{\arraystretch}{1.4}
+        \renewcommand{\arraystretch}{1.3}
 
         \hypersetup{
              colorlinks = true,
@@ -243,7 +243,7 @@ class Node:
         if depth == 2:
             result = f"""
             <tr>
-                <td valign="top" align="right"><em>{html(self.content)}</em></td>
+                <td style='vertical-align: top; text-align: right;'><p><em>{self.content}</em></p></td>
                 <td>{self.children[0].to_html(depth + 1)}</td>
             </tr>
             """

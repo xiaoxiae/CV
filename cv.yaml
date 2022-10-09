@@ -5,11 +5,15 @@
 
 - Education
 -
-  - 2019–present
+  - 2022–present
+  -
+    - "**Heidelberg University** [[website](https://www.uni-heidelberg.de/en)], _Germany_<br>
+      I'm getting my master's degree in Computer Science at the University of Heidelberg."
+  - 2019–2022
   -
     - "**Charles University** [[website](https://www.mff.cuni.cz/en)], _Czech Republic_<br>
-      I got my bachelor's degree in Computer Science at the Charles University in Prague,
-      with a specialization in Theoretical computer science."
+      I got my bachelor's degree in Computer Science at the Charles University,
+      with a specialization in Theoretical computer science (see Projects section for thesis)."
   - 2017–2018
   -
     - "**Westtown School** [[website](https://www.westtown.edu/index.cfm)], _USA_<br>
@@ -20,24 +24,24 @@
     - "**Turnov Grammar School** [[website](http://www.gytu.cz/postnuke/index.php)], _Czech Republic_"
 - Experience
 -
-  - 2019–present
+  - 2019–2022
   -
     - "**System administrator** at the _Charles University_<br>
-      My work includes network and server management, the handling of
-      software/hardware issues and other IT-related things
+      My responsibilities included network and server management, handling of
+      software/hardware issues, implementation of internal faculty services and more
       at the department of Applied Mathematics of the Charles University."
   - 2019–2021
   -
     - "**Vex EDR programming lecturer** at the _Turnov Educational Center_<br>
       As a part of a government grant, I wrote a textbook
       [[PDF](https://github.com/xiaoxiae/uvod-do-programovani-vex-v5)]
-      about Vex EDR programming, which I then used to introduce concepts of
-      programming and robotics to children of ages 12--18."
+      about Vex EDR programming, which I used to introduce
+      programming and robotics to high-school students."
 - Projects
 -
   - Thesis
   -
-    - "**Clis** and **Cled** (2021–present, Python + C#) [[website](https://climber.tools/)] [[GitHub](https://github.com/Climber-Apps)] [[whitepaper](https://github.com/Climber-Apps/Thesis)]<br>
+    - "**Clis** and **Cled** (2021–2022, Python + C#) [[whitepaper](https://github.com/Climber-Tools/Thesis)]<br>
       Tools for automatic climbing hold scanning and virtual route editing.
       This includes an Arduino-powered turntable which automatically takes pictures and converts them to 3D models,
       along with a cross-platform editor to place them on the wall."
