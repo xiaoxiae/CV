@@ -12,14 +12,19 @@ from subprocess import DEVNULL, PIPE, Popen
 import yaml
 from markdown import markdown
 
-YAML_NAME = "cv.yaml"
-
 parser = argparse.ArgumentParser(description="Generate a CV from a YAML file..")
 
 parser.add_argument(
+    "-i",
+    "--input",
+    help="The path to the input file (with extension), relative to this script's directory. Defaults to 'cv.yaml'.",
+    default="cv.yaml",
+)
+
+parser.add_argument(
     "-o",
-    "--out",
-    help="The path to the file, without extension. Defaults to 'cv'.",
+    "--output",
+    help="The path to the output file (without extension), relative to this script's directory. Defaults to 'cv'.",
     default="cv",
 )
 
@@ -45,6 +50,8 @@ group.add_argument(
 )
 
 arguments = parser.parse_args()
+
+YAML_NAME = arguments.input
 
 
 def html(c: str):
@@ -273,7 +280,7 @@ root = Node.from_string(result[1:])
 
 # generate a latex file when creating a PDF
 if arguments.latex:
-    with open(arguments.out + ".tex", "w") as f:
+    with open(arguments.output + ".tex", "w") as f:
         f.write(root.to_latex(information))
     print("LaTeX CV generated!")
 
@@ -309,9 +316,9 @@ elif arguments.pdf:
     else:
         print("PDF CV cached!")
 
-    shutil.copyfile(latex_output_path[:-3] + "pdf", arguments.out + ".pdf")
+    shutil.copyfile(latex_output_path[:-3] + "pdf", arguments.output + ".pdf")
 
 elif arguments.html:
-    with open(arguments.out + ".html", "w") as f:
+    with open(arguments.output + ".html", "w") as f:
         f.write(root.to_html())
     print("HTML CV generated!")
