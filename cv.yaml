@@ -41,7 +41,7 @@
 -
   - Thesis
   -
-    - "**Clis** and **Cled** (2021–2022, Python + C#) [[whitepaper](https://github.com/Climber-Tools/Thesis)]<br>
+    - "**Clis** and **Cled** (2021–2022, Python + C#) [[whitepaper](https://github.com/xiaoxiae/Thesis)]<br>
       Tools for automatic climbing hold scanning and virtual route editing.
       This includes an Arduino-powered turntable which automatically takes pictures and converts them to 3D models,
       along with a cross-platform editor to place them on the wall."
