@@ -61,6 +61,8 @@ def html(c: str):
 
 def latex(c: str):
     """Convert a string from Markdown to LaTeX."""
+    c = c.replace("–", "--").replace("-- ", r"\textendash\ ").replace("--", r"\textendash ")
+
     result = []
     for line in re.split("<br>", c.replace("\n\n", "\n\n\\vspace{0.5em}")):
         result.append(
@@ -307,7 +309,7 @@ elif arguments.pdf:
 
         cwd = os.getcwd()
         os.chdir(cache_path)
-        Popen(["lualatex", latex_file_name], stdout=DEVNULL).communicate()
+        Popen(["xelatex", latex_file_name], stdout=DEVNULL).communicate()
         os.chdir(cwd)
 
         # copy the yaml file so it can be cached
