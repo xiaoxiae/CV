@@ -252,7 +252,7 @@ class Node:
         if depth == 2:
             result = f"""
             <tr>
-                <td style='vertical-align: top; text-align: right;'><p><em>{self.content}</em></p></td>
+                <td style='vertical-align: top !important;'><p style='text-align: right !important;'><em>{self.content}</em></p></td>
                 <td>{self.children[0].to_html(depth + 1)}</td>
             </tr>
             """
