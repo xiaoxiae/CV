@@ -54,11 +54,6 @@ arguments = parser.parse_args()
 YAML_NAME = arguments.input
 
 
-def html(c: str):
-    """Convert a string from Markdown to HTML."""
-    markdown(c)
-
-
 def latex(c: str):
     """Convert a string from Markdown to LaTeX."""
     c = c.replace("–", "--").replace("-- ", r"\textendash\ ").replace("--", r"\textendash ")
